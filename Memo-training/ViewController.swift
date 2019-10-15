@@ -28,32 +28,30 @@ class DataViewController: UIViewController {
         for _ in 0...difficulty {
             let randomButton = buttonsArray.randomElement()
             
-            let bool = randomButton?.isSpringLoaded = false
+            let bool = randomButton?.isHighlighted = false
             
             SwitchButton(randomButton: randomButton!, highlight: (bool != nil))
             
             pattern.append(randomButton!)
-            
-            sleep(30)
-            
+                        
             SwitchButton(randomButton: randomButton!, highlight: (bool != nil))
         }
         return pattern
     }
     
     func SwitchButton(randomButton: UIButton, highlight: Bool) -> Bool{
-        if randomButton.isFocused {
-            randomButton.isSpringLoaded = false
+        if randomButton.isHighlighted {
+            randomButton.isHighlighted = false
             
-            print(randomButton.isSpringLoaded)
+            print(randomButton.isHighlighted)
             
-            return randomButton.isSpringLoaded
+            return randomButton.isHighlighted
         } else{
-            randomButton.isSpringLoaded = true
+            randomButton.isHighlighted = true
             
-            print(randomButton.isSpringLoaded)
+            print(randomButton.isHighlighted)
             
-            return randomButton.isSpringLoaded
+            return randomButton.isHighlighted
         }
     }
     
