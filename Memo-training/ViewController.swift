@@ -9,7 +9,7 @@ class DataViewController: UIViewController {
     
     var buttonsArray:[UIButton] = []
     var pattern:[UIButton] = []
-    var difficulty:Int8 = 1
+    var difficulty:Int8 = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,35 +24,41 @@ class DataViewController: UIViewController {
         Lose(pattern: pattern)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
-    
     func Gamble(buttons: [UIButton]) -> [UIButton] {
         for _ in 0...difficulty {
             let randomButton = buttonsArray.randomElement()
             
-            SwitchButton(randomButton: randomButton!)
+            let bool = randomButton?.isSpringLoaded = false
+            
+            SwitchButton(randomButton: randomButton!, highlight: (bool != nil))
             
             pattern.append(randomButton!)
             
-            SwitchButton(randomButton: randomButton!)
+            sleep(30)
+            
+            SwitchButton(randomButton: randomButton!, highlight: (bool != nil))
         }
         return pattern
     }
     
-    func SwitchButton(randomButton: UIButton) {
-        if randomButton.isHighlighted {
-            randomButton.isHighlighted = false
+    func SwitchButton(randomButton: UIButton, highlight: Bool) -> Bool{
+        if randomButton.isFocused {
+            randomButton.isSpringLoaded = false
+            
+            print(randomButton.isSpringLoaded)
+            
+            return randomButton.isSpringLoaded
         } else{
-            randomButton.isHighlighted = true
+            randomButton.isSpringLoaded = true
+            
+            print(randomButton.isSpringLoaded)
+            
+            return randomButton.isSpringLoaded
         }
     }
     
     func Lose(pattern: [UIButton]) {
-        /*if pattern {
-         print("score", difficulty)
-         }*/
+        //blue.addTarget(pattern, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
+        
     }
 }

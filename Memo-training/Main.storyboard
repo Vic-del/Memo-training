@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina3_5" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="S4R-Ja-viH">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,24 +15,23 @@
             <objects>
                 <viewController storyboardIdentifier="DataViewController" id="S4R-Ja-viH" customClass="DataViewController" customModule="Memo_training" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ZwX-cT-FIQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="f2c-dK-wjw">
-                                <rect key="frame" x="20" y="40" width="280" height="420"/>
+                                <rect key="frame" x="20" y="64" width="374" height="768"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Qda-7Q-R3n">
-                                        <rect key="frame" x="0.0" y="0.0" width="140" height="420"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="768"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajo-tV-Qja">
-                                                <rect key="frame" x="0.0" y="0.0" width="140" height="210"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ajo-tV-Qja">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="384"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcY-Da-29x">
-                                                <rect key="frame" x="0.0" y="210" width="140" height="210"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tcY-Da-29x">
+                                                <rect key="frame" x="0.0" y="384" width="187" height="384"/>
                                                 <color key="backgroundColor" red="0.0" green="1" blue="0.061501125429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal">
                                                     <color key="titleColor" red="0.083172611892223358" green="0.99084824323654175" blue="0.06991519033908844" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
@@ -45,19 +44,19 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NIg-mv-8gc">
-                                        <rect key="frame" x="140" y="0.0" width="140" height="420"/>
+                                        <rect key="frame" x="187" y="0.0" width="187" height="768"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4y-Wi-gFO">
-                                                <rect key="frame" x="0.0" y="0.0" width="140" height="210"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y4y-Wi-gFO">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="384"/>
                                                 <color key="backgroundColor" red="1" green="0.084393614219999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal">
                                                     <color key="titleColor" red="0.99925309419631958" green="0.11535043269395828" blue="0.0012653780868276954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVR-0S-3CF">
-                                                <rect key="frame" x="0.0" y="210" width="140" height="210"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NVR-0S-3CF">
+                                                <rect key="frame" x="0.0" y="384" width="187" height="384"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
@@ -81,12 +80,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="f2c-dK-wjw" firstAttribute="top" secondItem="ZwX-cT-FIQ" secondAttribute="topMargin" constant="20" id="483-3f-IcD"/>
-                            <constraint firstItem="K9I-jD-KjA" firstAttribute="bottom" secondItem="f2c-dK-wjw" secondAttribute="bottom" constant="20" id="Axf-XC-l1u"/>
-                            <constraint firstItem="f2c-dK-wjw" firstAttribute="centerY" secondItem="ZwX-cT-FIQ" secondAttribute="centerY" id="HhJ-GV-zai"/>
                             <constraint firstItem="f2c-dK-wjw" firstAttribute="centerX" secondItem="ZwX-cT-FIQ" secondAttribute="centerX" id="ILz-U6-sLw"/>
                             <constraint firstItem="K9I-jD-KjA" firstAttribute="trailing" secondItem="f2c-dK-wjw" secondAttribute="trailing" constant="20" id="M4r-ht-QQg"/>
                             <constraint firstItem="f2c-dK-wjw" firstAttribute="leading" secondItem="K9I-jD-KjA" secondAttribute="leading" constant="20" id="hi0-K3-vxE"/>
+                            <constraint firstItem="f2c-dK-wjw" firstAttribute="top" secondItem="K9I-jD-KjA" secondAttribute="top" constant="20" id="lCw-3R-OA2"/>
+                            <constraint firstItem="f2c-dK-wjw" firstAttribute="centerY" secondItem="ZwX-cT-FIQ" secondAttribute="centerY" id="pkx-rN-Jhx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K9I-jD-KjA"/>
                     </view>
