@@ -9,7 +9,7 @@ class DataViewController: UIViewController {
     
     var buttonsArray:[UIButton] = []
     var pattern:[UIButton] = []
-    var difficulty:Int8 = 0
+    var difficulty:Int8 = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,44 +19,42 @@ class DataViewController: UIViewController {
         buttonsArray.append(green)
         buttonsArray.append(black)
 
-        let pattern = Gamble(buttons: buttonsArray)
+        let pattern = Shuffle(buttons: buttonsArray)
+        
+        Gamble(pattern: pattern)
         
         Lose(pattern: pattern)
     }
     
-    func Gamble(buttons: [UIButton]) -> [UIButton] {
+    func Shuffle(buttons: [UIButton]) -> [UIButton] {
         for _ in 0...difficulty {
             let randomButton = buttonsArray.randomElement()
-            
-            let bool = randomButton?.isHighlighted = false
-            
-            SwitchButton(randomButton: randomButton!, highlight: (bool != nil))
-            
             pattern.append(randomButton!)
-                        
-            SwitchButton(randomButton: randomButton!, highlight: (bool != nil))
         }
         return pattern
     }
     
-    func SwitchButton(randomButton: UIButton, highlight: Bool) -> Bool{
-        if randomButton.isHighlighted {
-            randomButton.isHighlighted = false
-            
-            print(randomButton.isHighlighted)
-            
-            return randomButton.isHighlighted
-        } else{
-            randomButton.isHighlighted = true
-            
-            print(randomButton.isHighlighted)
-            
-            return randomButton.isHighlighted
+    func Gamble(pattern: [UIButton]) {
+        
+        var seconds = 1.0
+        for button in pattern {
+            seconds += 1.0
+            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                self.SwitchButton(randomButton: button)
+            }
         }
     }
     
+    func SwitchButton(randomButton: UIButton){
+        randomButton.isHighlighted = true
+        
+        randomButton.isHighlighted = false
+    }
+    
     func Lose(pattern: [UIButton]) {
-        //blue.addTarget(pattern, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
+        blue.
+    }
+    @IBAction func BlueButtoncoño(_ sender: UIButton) {
         
     }
 }
