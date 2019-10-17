@@ -9,7 +9,9 @@ class DataViewController: UIViewController {
     
     var buttonsArray:[UIButton] = []
     var pattern:[UIButton] = []
-    var difficulty:Int8 = 10
+    var userTry:[UIButton] = []
+    var difficulty:Int8 = 0
+    var delay = 1.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,15 +20,14 @@ class DataViewController: UIViewController {
         buttonsArray.append(red)
         buttonsArray.append(green)
         buttonsArray.append(black)
-
-        let pattern = Shuffle(buttons: buttonsArray)
-        
-        Gamble(pattern: pattern)
-        
-        Lose(pattern: pattern)
+        repeat{
+            let pattern = shuffle(buttons: buttonsArray)
+            
+            gamble(pattern: pattern)
+        }while !lose(pattern: pattern)
     }
     
-    func Shuffle(buttons: [UIButton]) -> [UIButton] {
+    func shuffle(buttons: [UIButton]) -> [UIButton] {
         for _ in 0...difficulty {
             let randomButton = buttonsArray.randomElement()
             pattern.append(randomButton!)
@@ -34,27 +35,45 @@ class DataViewController: UIViewController {
         return pattern
     }
     
-    func Gamble(pattern: [UIButton]) {
-        
-        var seconds = 1.0
+    func gamble(pattern: [UIButton]) {
         for button in pattern {
-            seconds += 1.0
-            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-                self.SwitchButton(randomButton: button)
+            delay += 1.0
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                self.switchButton(randomButton: button)
             }
         }
     }
     
-    func SwitchButton(randomButton: UIButton){
+    func switchButton(randomButton: UIButton) {
         randomButton.isHighlighted = true
-        
         randomButton.isHighlighted = false
     }
     
-    func Lose(pattern: [UIButton]) {
-        blue.
+    func lose(pattern: [UIButton]) -> Bool {
+        if userTry.count == buttonsArray.count {
+            if userTry != buttonsArray{
+                print("you won!")
+                return true
+            }
+        }
+        difficulty += 1
+        print(difficulty)
+        return false
     }
-    @IBAction func BlueButtoncoño(_ sender: UIButton) {
-        
+    
+    @IBAction func blue(_ sender: UIButton) {
+        userTry.append(blue)
+    }
+    
+    @IBAction func red(_ sender: UIButton) {
+        userTry.append(red)
+    }
+    
+    @IBAction func green(_ sender: UIButton) {
+        userTry.append(green)
+    }
+    
+    @IBAction func black(_ sender: UIButton) {
+        userTry.append(black)
     }
 }

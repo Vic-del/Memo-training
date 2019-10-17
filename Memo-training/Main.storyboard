@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="S4R-Ja-viH">
-    <device id="retina6_5" orientation="portrait">
+    <device id="ipad12_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,28 +15,31 @@
             <objects>
                 <viewController storyboardIdentifier="DataViewController" id="S4R-Ja-viH" customClass="DataViewController" customModule="Memo_training" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ZwX-cT-FIQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="f2c-dK-wjw">
-                                <rect key="frame" x="20" y="64" width="374" height="768"/>
+                                <rect key="frame" x="20" y="40" width="984" height="1286"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Qda-7Q-R3n">
-                                        <rect key="frame" x="0.0" y="0.0" width="187" height="768"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="492" height="1286"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ajo-tV-Qja">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="384"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="492" height="643"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
-                                                    <action selector="BlueButtoncoño:" destination="S4R-Ja-viH" eventType="touchDown" id="DuK-ks-Cka"/>
+                                                    <action selector="blue:" destination="S4R-Ja-viH" eventType="touchDown" id="aqq-XC-x4m"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tcY-Da-29x">
-                                                <rect key="frame" x="0.0" y="384" width="187" height="384"/>
+                                                <rect key="frame" x="0.0" y="643" width="492" height="643"/>
                                                 <color key="backgroundColor" red="0.0" green="1" blue="0.061501125429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal">
                                                     <color key="titleColor" red="0.083172611892223358" green="0.99084824323654175" blue="0.06991519033908844" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="green:" destination="S4R-Ja-viH" eventType="touchDown" id="Mli-OQ-Pvz"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -47,21 +50,27 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NIg-mv-8gc">
-                                        <rect key="frame" x="187" y="0.0" width="187" height="768"/>
+                                        <rect key="frame" x="492" y="0.0" width="492" height="1286"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y4y-Wi-gFO">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="384"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="492" height="643"/>
                                                 <color key="backgroundColor" red="1" green="0.084393614219999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal">
                                                     <color key="titleColor" red="0.99925309419631958" green="0.11535043269395828" blue="0.0012653780868276954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="red:" destination="S4R-Ja-viH" eventType="touchDown" id="Vmy-BN-FOW"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NVR-0S-3CF">
-                                                <rect key="frame" x="0.0" y="384" width="187" height="384"/>
+                                                <rect key="frame" x="0.0" y="643" width="492" height="643"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="black:" destination="S4R-Ja-viH" eventType="touchDown" id="65q-lv-i15"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -93,7 +102,7 @@
                     </view>
                     <connections>
                         <outlet property="black" destination="NVR-0S-3CF" id="nkH-Oo-d1j"/>
-                        <outlet property="blue" destination="Ajo-tV-Qja" id="OG1-ME-QQk"/>
+                        <outlet property="blue" destination="Ajo-tV-Qja" id="ely-1z-jBf"/>
                         <outlet property="green" destination="tcY-Da-29x" id="eGD-nt-LvZ"/>
                         <outlet property="red" destination="y4y-Wi-gFO" id="qNq-XW-lw7"/>
                     </connections>
