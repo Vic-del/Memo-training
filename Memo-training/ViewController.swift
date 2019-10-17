@@ -24,7 +24,7 @@ class DataViewController: UIViewController {
             let pattern = shuffle(buttons: buttonsArray)
             
             gamble(pattern: pattern)
-        }while !lose(pattern: pattern)
+        }while lose(pattern: pattern) == false
     }
     
     func shuffle(buttons: [UIButton]) -> [UIButton] {
@@ -50,15 +50,17 @@ class DataViewController: UIViewController {
     }
     
     func lose(pattern: [UIButton]) -> Bool {
-        if userTry.count == buttonsArray.count {
-            if userTry != buttonsArray{
-                print("you won!")
+        if userTry.count == pattern.count {
+            if userTry != pattern{
+                print("you lose!")
+                return false
+            } else{
+                difficulty += 1
+                print(difficulty)
                 return true
             }
         }
-        difficulty += 1
-        print(difficulty)
-        return false
+        return true
     }
     
     @IBAction func blue(_ sender: UIButton) {
