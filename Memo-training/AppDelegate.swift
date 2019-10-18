@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Memo-training
 //
-//  Created by alumnos on 14/10/2019.
+//  Created by Víctor Agulló on 18/10/19.
 //  Copyright © 2019 Eztena. All rights reserved.
 //
 

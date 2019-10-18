@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		7F90C70723546BBD00C74854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F90C70623546BBD00C74854 /* AppDelegate.swift */; };
-		7F90C70923546BBD00C74854 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F90C70823546BBD00C74854 /* ViewController.swift */; };
+		7F90C70923546BBD00C74854 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F90C70823546BBD00C74854 /* GameController.swift */; };
 		7F90C70E23546BBF00C74854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F90C70D23546BBF00C74854 /* Assets.xcassets */; };
 		7F90C71123546BBF00C74854 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F90C70F23546BBF00C74854 /* LaunchScreen.storyboard */; };
 		7F90C71923546BEC00C74854 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F90C71823546BEC00C74854 /* Main.storyboard */; };
+		B9B2DE41235A244900F6BBF4 /* PrincipalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B2DE40235A244900F6BBF4 /* PrincipalController.swift */; };
+		B9B2DE43235A267A00F6BBF4 /* GameOverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B2DE42235A267A00F6BBF4 /* GameOverController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7F90C70323546BBD00C74854 /* Memo-training.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Memo-training.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F90C70623546BBD00C74854 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7F90C70823546BBD00C74854 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7F90C70823546BBD00C74854 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		7F90C70D23546BBF00C74854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F90C71023546BBF00C74854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F90C71223546BBF00C74854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F90C71823546BEC00C74854 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B9B2DE40235A244900F6BBF4 /* PrincipalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalController.swift; sourceTree = "<group>"; };
+		B9B2DE42235A267A00F6BBF4 /* GameOverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +59,10 @@
 			isa = PBXGroup;
 			children = (
 				7F90C70623546BBD00C74854 /* AppDelegate.swift */,
-				7F90C70823546BBD00C74854 /* ViewController.swift */,
+				7F90C70823546BBD00C74854 /* GameController.swift */,
 				7F90C71823546BEC00C74854 /* Main.storyboard */,
+				B9B2DE40235A244900F6BBF4 /* PrincipalController.swift */,
+				B9B2DE42235A267A00F6BBF4 /* GameOverController.swift */,
 				7F90C70D23546BBF00C74854 /* Assets.xcassets */,
 				7F90C70F23546BBF00C74854 /* LaunchScreen.storyboard */,
 				7F90C71223546BBF00C74854 /* Info.plist */,
@@ -136,7 +142,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F90C70923546BBD00C74854 /* ViewController.swift in Sources */,
+				7F90C70923546BBD00C74854 /* GameController.swift in Sources */,
+				B9B2DE43235A267A00F6BBF4 /* GameOverController.swift in Sources */,
+				B9B2DE41235A244900F6BBF4 /* PrincipalController.swift in Sources */,
 				7F90C70723546BBD00C74854 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,14 +288,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T54H4RF8RN;
 				INFOPLIST_FILE = "Memo-training/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "u.Memo-training";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -301,14 +309,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T54H4RF8RN;
 				INFOPLIST_FILE = "Memo-training/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "u.Memo-training";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -1,6 +1,14 @@
+//
+//  GameController.swift
+//  Memo-training
+//
+//  Created by Víctor Agulló on 18/10/19.
+//  Copyright © 2019 Eztena. All rights reserved.
+//
+
 import UIKit
 
-class DataViewController: UIViewController {
+class GameController: UIViewController {
     
     @IBOutlet weak var blue: UIButton!
     @IBOutlet weak var red: UIButton!
@@ -38,7 +46,7 @@ class DataViewController: UIViewController {
     
     func gamble(pattern: [UIButton]) {
         for button in pattern {
-            delay += 0.5
+            delay += 0.3
             DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
                 self.switchButton(randomButton: button)
             }
@@ -53,10 +61,8 @@ class DataViewController: UIViewController {
     func lose(pattern: [UIButton]){
         if userTry.count == pattern.count{
             if userTry != pattern{
-            print("you lose!")
             } else{
                 difficulty + 1
-                print(difficulty, pattern, userTry)
                 self.userTry = []
                 startGame()
             }
