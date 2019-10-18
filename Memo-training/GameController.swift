@@ -61,6 +61,7 @@ class GameController: UIViewController {
     func lose(pattern: [UIButton]){
         if userTry.count == pattern.count{
             if userTry != pattern{
+                performSegue(withIdentifier: "segueGameOver", sender: self)
             } else{
                 difficulty + 1
                 self.userTry = []

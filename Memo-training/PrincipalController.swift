@@ -16,6 +16,6 @@ class PrincipalController: UIViewController {
     @IBOutlet weak var difficultyEntry: UITextField!
     
     @IBAction func gameButton(_ sender: Any) {
-        self.performSegue(withIdentifier: "segueGame", sender: nil)
+        self.performSegue(withIdentifier: "segueGame", sender: self)
     }
 }
