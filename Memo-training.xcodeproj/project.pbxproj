@@ -12,8 +12,8 @@
 		7F90C70E23546BBF00C74854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F90C70D23546BBF00C74854 /* Assets.xcassets */; };
 		7F90C71123546BBF00C74854 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F90C70F23546BBF00C74854 /* LaunchScreen.storyboard */; };
 		7F90C71923546BEC00C74854 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F90C71823546BEC00C74854 /* Main.storyboard */; };
+		B986CF09235CE694004009C3 /* GameOverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B986CF08235CE694004009C3 /* GameOverController.swift */; };
 		B9B2DE41235A244900F6BBF4 /* PrincipalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B2DE40235A244900F6BBF4 /* PrincipalController.swift */; };
-		B9B2DE43235A267A00F6BBF4 /* GameOverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B2DE42235A267A00F6BBF4 /* GameOverController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +24,8 @@
 		7F90C71023546BBF00C74854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F90C71223546BBF00C74854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F90C71823546BEC00C74854 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B986CF08235CE694004009C3 /* GameOverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverController.swift; sourceTree = "<group>"; };
 		B9B2DE40235A244900F6BBF4 /* PrincipalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalController.swift; sourceTree = "<group>"; };
-		B9B2DE42235A267A00F6BBF4 /* GameOverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +58,11 @@
 		7F90C70523546BBD00C74854 /* Memo-training */ = {
 			isa = PBXGroup;
 			children = (
+				B986CF08235CE694004009C3 /* GameOverController.swift */,
 				7F90C70623546BBD00C74854 /* AppDelegate.swift */,
 				7F90C70823546BBD00C74854 /* GameController.swift */,
 				7F90C71823546BEC00C74854 /* Main.storyboard */,
 				B9B2DE40235A244900F6BBF4 /* PrincipalController.swift */,
-				B9B2DE42235A267A00F6BBF4 /* GameOverController.swift */,
 				7F90C70D23546BBF00C74854 /* Assets.xcassets */,
 				7F90C70F23546BBF00C74854 /* LaunchScreen.storyboard */,
 				7F90C71223546BBF00C74854 /* Info.plist */,
@@ -143,7 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F90C70923546BBD00C74854 /* GameController.swift in Sources */,
-				B9B2DE43235A267A00F6BBF4 /* GameOverController.swift in Sources */,
+				B986CF09235CE694004009C3 /* GameOverController.swift in Sources */,
 				B9B2DE41235A244900F6BBF4 /* PrincipalController.swift in Sources */,
 				7F90C70723546BBD00C74854 /* AppDelegate.swift in Sources */,
 			);
