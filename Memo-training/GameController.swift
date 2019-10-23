@@ -21,10 +21,23 @@ class GameController: UIViewController {
     var difficulty:Int8 = 0
     var delay = 1.0
     var name = ""
+    var level = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        level = String(difficulty)
         startGame()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is GameOverController
+        {
+            let destinyGameOver = segue.destination as? GameOverController
+            
+            destinyGameOver?.playerName = name
+            destinyGameOver?.playerScore = level
+        }
     }
     
     func startGame() {
@@ -64,8 +77,7 @@ class GameController: UIViewController {
             if userTry != pattern{
                 performSegue(withIdentifier: "segueGameOver", sender: self)
             } else{
-                difficulty = difficulty + 1
-                print(difficulty)
+                self.difficulty + 1
                 self.userTry = []
                 startGame()
             }
@@ -90,19 +102,5 @@ class GameController: UIViewController {
     @IBAction func black(_ sender: UIButton) {
         userTry.append(black)
         lose(pattern: pattern)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        if segue.destination is GameOverController
-        {
-            let destinyGameOver = segue.destination as? GameOverController
-            print("prepare", difficulty)
-            let difficultyString = String(difficulty)
-            let notnilname = name
-            
-            destinyGameOver?.playerName = notnilname
-            destinyGameOver?.playerScore = difficultyString
-        }
     }
 }
