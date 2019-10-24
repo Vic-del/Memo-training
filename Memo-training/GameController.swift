@@ -18,14 +18,12 @@ class GameController: UIViewController {
     var buttonsArray:[UIButton] = []
     var pattern:[UIButton] = []
     var userTry:[UIButton] = []
-    var difficulty:Int8 = 0
-    var delay = 1.0
+    var difficulty:Int = 0
+    var delay = 0.5
     var name = ""
-    var level = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        level = String(difficulty)
         startGame()
     }
     
@@ -36,7 +34,7 @@ class GameController: UIViewController {
             let destinyGameOver = segue.destination as? GameOverController
             
             destinyGameOver?.playerName = name
-            destinyGameOver?.playerScore = level
+            destinyGameOver?.playerScore = difficulty
         }
     }
     
@@ -51,7 +49,7 @@ class GameController: UIViewController {
     }
     
     func shuffle(buttons: [UIButton]) -> [UIButton] {
-        for _ in 0...difficulty {
+        for _ in 0..<difficulty - pattern.count {
             let randomButton = buttonsArray.randomElement()
             pattern.append(randomButton!)
         }
@@ -77,7 +75,7 @@ class GameController: UIViewController {
             if userTry != pattern{
                 performSegue(withIdentifier: "segueGameOver", sender: self)
             } else{
-                self.difficulty + 1
+                self.difficulty += 1
                 self.userTry = []
                 startGame()
             }

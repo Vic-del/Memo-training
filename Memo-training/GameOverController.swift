@@ -12,18 +12,15 @@ class GameOverController: UIViewController {
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var score: UILabel!
-    var playerName = ""
-    var playerScore = ""
+    var playerName = "Player"
+    var playerScore = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         name.text! = playerName
-        score.text! = playerScore
+        score.text! = String(playerScore)
     }
     
     @IBAction func initButton(_ sender: UIButton) {
-    }
-    
-    @IBAction func retryButton(_ sender: UIButton) {
     }
 }

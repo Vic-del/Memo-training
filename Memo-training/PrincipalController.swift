@@ -13,16 +13,16 @@ class PrincipalController: UIViewController {
     @IBOutlet weak var nameEntry: UITextField!
     @IBOutlet weak var difficultyEntry: UISlider!
     @IBOutlet weak var levelLabel: UILabel!
-    
+    var diffValue = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        difficultyEntry.maximumValue = 127
+        difficultyEntry.minimumValue = 1
     }
     
     @IBAction func difficultySlider(_ sender: UISlider) {
-        sender.maximumValue = 127
-        sender.minimumValue = 0
-        let diffValue = Int(sender.value)
+        diffValue = Int(sender.value)
         levelLabel.text = "\(diffValue)"
     }
     
@@ -32,10 +32,9 @@ class PrincipalController: UIViewController {
         {
             let destinyGame = segue.destination as? GameController
             
-            let difficultyNum = Int8(difficultyEntry.value)
             let finalName = nameEntry.text ?? "Anon"
             
-            destinyGame?.difficulty = difficultyNum
+            destinyGame?.difficulty = diffValue
             destinyGame?.name = finalName
         }
     }
