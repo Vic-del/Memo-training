@@ -13,8 +13,11 @@ class GameOverController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var score: UILabel!
     
+    // Array de nombres
+    var fillName = ["Crack", "Titán", "Mastodonte", "Figura", "Jefe", "Campeón", "Semental", "Diplodocus", "Máquina"]
+    
     // Nombre del jugador
-    var playerName = "Player"
+    var playerName = ""
     
     // Puntuación
     var playerScore = 0
@@ -24,6 +27,16 @@ class GameOverController: UIViewController {
         super.viewDidLoad()
         name.text! = playerName
         score.text! = String(playerScore)
+        anonymizer()
+    }
+    
+    // Si el jugador no ha metido el nombre, se le asigna uno por defecto
+    func anonymizer(){
+        if name.text! == ""
+        {
+            name.text! = fillName.randomElement()!
+        }
+        
     }
     
     /*

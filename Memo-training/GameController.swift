@@ -138,23 +138,31 @@ class GameController: UIViewController {
     a la función lose() para saber si el usuario pasa a la siguiente ronda o pierde
     */
     @IBAction func blue(_ sender: UIButton) {
+        switchButton(randomButton: blue)
         userTry.append(blue)
         lose(pattern: pattern)
     }
     
     @IBAction func red(_ sender: UIButton) {
+        switchButton(randomButton: red)
         userTry.append(red)
         lose(pattern: pattern)
     }
     
     @IBAction func green(_ sender: UIButton) {
+        switchButton(randomButton: green)
         userTry.append(green)
         lose(pattern: pattern)
     }
     
     @IBAction func black(_ sender: UIButton) {
+        switchButton(randomButton: black)
         userTry.append(black)
         lose(pattern: pattern)
+    }
+    
+    func switchBackground(buttonPressed: UIButton, colour: UIColor) {
+        //buttonPressed.backgroundColor = buttonPressed.isHighlighted ? colour.col : UIColor.lightGray
     }
     
     /*
@@ -163,20 +171,27 @@ class GameController: UIViewController {
      en caso contrario pasa a la siguiente pantalla.
      */
     func lose(pattern: [UIButton]) {
-        if userTry.count == pattern.count {
-            if userTry != pattern {
+        
+        // Pulsación del botón guardada en el array
+        let tryIndex = userTry.count - 1
+        
+        /*
+         Comparación, usando la long. del array de pulsaciones, con la
+         posición del array patrón para que así cada pulsación sea comparada
+         individualmente y si se falla en una, se pierda inmediatamente.
+         */
+        if userTry[tryIndex] != pattern[tryIndex] {
                 /*
                  Se realiza el segue programáticamente en lugar
                  del modelo visual por su mayor versatilidad, en este caso
                  pudienddo elegir hacerlo tras comprobar que el usuario ha perdido.
                  */
-                performSegue(withIdentifier: "segueGameOver", sender: self)
-            } else {
-                self.difficulty += 1
-                self.userTry = []
+            performSegue(withIdentifier: "segueGameOver", sender: self)
+        } else if userTry.count == pattern.count{
+            self.difficulty += 1
+            self.userTry = []
                 
-                startGame()
-            }
+            startGame()
         }
     }
 }
