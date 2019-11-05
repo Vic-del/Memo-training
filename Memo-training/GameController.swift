@@ -14,7 +14,7 @@ class GameController: UIViewController {
     @IBOutlet weak var blue: UIButton!
     @IBOutlet weak var red: UIButton!
     @IBOutlet weak var green: UIButton!
-    @IBOutlet weak var black: UIButton!
+    @IBOutlet weak var yellow: UIButton!
     
     // Array de los botones en pantalla
     var buttonsArray:[UIButton] = []
@@ -29,13 +29,19 @@ class GameController: UIViewController {
     var difficulty:Int = 0
     
     // Retraso entre rondas
-    var totalDelay = 0.5
+    var totalDelay = 0.4
     
     // Retraso acumulativo entre pistas de luz
-    var progressiveDelay = 0.5
+    var progressiveDelay = 0.4
     
     // Variable del nombre traida del código de Principal
     var name = ""
+    
+    // Variable para el color de cada botón
+    var initialColor =  #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    
+    // Variable para el cambio de color al pulsar
+    var changeColor =  #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     
     // Se inicia el juego al cargar la pantalla
     override func viewDidLoad() {
@@ -52,7 +58,7 @@ class GameController: UIViewController {
         buttonsArray.append(blue)
         buttonsArray.append(red)
         buttonsArray.append(green)
-        buttonsArray.append(black)
+        buttonsArray.append(yellow)
         
         let pattern = shuffle(buttons: buttonsArray)
         
@@ -108,6 +114,7 @@ class GameController: UIViewController {
     
     // Se ilumina y apaga el botón especificado por la iteración de gamble()
     func switchButton(randomButton: UIButton) {
+
         randomButton.isHighlighted = true
         randomButton.isHighlighted = false
     }
@@ -138,31 +145,48 @@ class GameController: UIViewController {
     a la función lose() para saber si el usuario pasa a la siguiente ronda o pierde
     */
     @IBAction func blue(_ sender: UIButton) {
-        switchButton(randomButton: blue)
+        initialColor = #colorLiteral(red: 0, green: 0, blue: 0.7843137255, alpha: 1)
+        changeColor =  #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        switchColor(button: blue, color1: initialColor, color2: changeColor)
         userTry.append(blue)
         lose(pattern: pattern)
     }
     
     @IBAction func red(_ sender: UIButton) {
-        switchButton(randomButton: red)
+        initialColor = #colorLiteral(red: 0.7843137255, green: 0, blue: 0, alpha: 1)
+        changeColor =  #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        switchColor(button: red, color1: initialColor, color2: changeColor)
         userTry.append(red)
         lose(pattern: pattern)
     }
     
     @IBAction func green(_ sender: UIButton) {
-        switchButton(randomButton: green)
+        initialColor = #colorLiteral(red: 0, green: 0.7843137255, blue: 0, alpha: 1)
+        changeColor =  #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        switchColor(button: green, color1: initialColor, color2: changeColor)
         userTry.append(green)
         lose(pattern: pattern)
     }
     
-    @IBAction func black(_ sender: UIButton) {
-        switchButton(randomButton: black)
-        userTry.append(black)
+    @IBAction func yellow(_ sender: UIButton) {
+        initialColor = #colorLiteral(red: 0.7843137255, green: 0.7843137255, blue: 0, alpha: 1)
+        changeColor =  #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        switchColor(button: yellow, color1: initialColor, color2: changeColor)
+        userTry.append(yellow)
         lose(pattern: pattern)
     }
     
-    func switchBackground(buttonPressed: UIButton, colour: UIColor) {
-        //buttonPressed.backgroundColor = buttonPressed.isHighlighted ? colour.col : UIColor.lightGray
+    /*
+     Cambio de color de los botones pulsados como método de feedback visual
+     tras pulsar un botón y distinguir la participación del jugador de la
+     guía de la maquina.
+     */
+    func switchColor(button: UIButton, color1: UIColor, color2: UIColor) {
+        
+        button.backgroundColor = color2
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) {
+            (delay) in button.backgroundColor = color1
+        }
     }
     
     /*
